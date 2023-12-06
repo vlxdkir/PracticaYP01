@@ -96,7 +96,7 @@
                 </materialDesign:PopupBox>
 
 
-                <Image Name="Userlogo" Margin="0,0,0,5" Source="E:\РПМ\Задания Баинки\WPF_login\WPF_login\Assets\Images\userlogo.png" Height="50"></Image>
+                <Image Name="Userlogo" Margin="0,0,0,5" Source="E:\РПМ\УП\WPF_login\WPF_login\Assets\Images\userlogo.png" Height="50"></Image>
 
                 <TextBlock Margin="0,25,0,5" HorizontalAlignment="Center" FontSize="28"  FontWeight="Bold" Text="Рад видеть!" />
                 <TextBlock Margin="0,0,0,10" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Text="Welcome!" />

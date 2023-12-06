@@ -28,7 +28,7 @@ namespace WPF_login
         public MainWindow()
         {
             InitializeComponent();
-            var imageBrush = new ImageBrush(new BitmapImage(new Uri("E:\\РПМ\\Задания Баинки\\WPF_login\\WPF_login\\Assets\\Images\\Fon.jpg", UriKind.Relative)));
+            var imageBrush = new ImageBrush(new BitmapImage(new Uri("E:\\РПМ\\УП\\WPF_login\\WPF_login\\Assets\\Images\\Fon.jpg", UriKind.Relative)));
             this.Background = imageBrush;
         }
 
@@ -52,7 +52,7 @@ namespace WPF_login
                 IsDarkTheme = false;
                 theme.SetBaseTheme(Theme.Light);
 
-                var imageBrush = new ImageBrush(new BitmapImage(new Uri("E:\\РПМ\\Задания Баинки\\WPF_login\\WPF_login\\Assets\\Images\\Fon.jpg", UriKind.Relative)));
+                var imageBrush = new ImageBrush(new BitmapImage(new Uri("E:\\РПМ\\УП\\WPF_login\\WPF_login\\Assets\\Images\\Fon.jpg", UriKind.Relative)));
                 this.Background = imageBrush;
 
                 
@@ -64,7 +64,7 @@ namespace WPF_login
                 IsDarkTheme = true;
                 theme.SetBaseTheme(Theme.Dark);
 
-                var imageBrush = new ImageBrush(new BitmapImage(new Uri("E:\\РПМ\\Задания Баинки\\WPF_login\\WPF_login\\Assets\\Images\\Fon2.jpg", UriKind.Relative)));
+                var imageBrush = new ImageBrush(new BitmapImage(new Uri("E:\\РПМ\\УП\\WPF_login\\WPF_login\\Assets\\Images\\Fon2.jpg", UriKind.Relative)));
                 this.Background = imageBrush;
 
                 
