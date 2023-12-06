@@ -15,8 +15,8 @@
 
     <Window.Resources>
         <local:PointConverter x:Key="PointConverter"/>
-        
-        
+
+
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
@@ -27,22 +27,105 @@
             </BeginStoryboard>
         </EventTrigger>
 
-        <EventTrigger RoutedEvent="UIElement.MouseMove">
+        <EventTrigger RoutedEvent="Button.Click" SourceName="signupBtn">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="BackgroundTransform" Storyboard.TargetProperty="X" Duration="0:0:0.1">
-                        <DoubleAnimation.To>
-                            <Binding ElementName="MainWindow" Path="MousePosition.X"/>
-                        </DoubleAnimation.To>
-                    </DoubleAnimation>
-                    <DoubleAnimation Storyboard.TargetName="BackgroundTransform" Storyboard.TargetProperty="Y" Duration="0:0:0.1">
-                        <DoubleAnimation.To>
-                            <Binding ElementName="MainWindow" Path="MousePosition.Y"/>
-                        </DoubleAnimation.To>
-                    </DoubleAnimation>
+                   
+                    <DoubleAnimation Storyboard.TargetName="StackPanelScale" Storyboard.TargetProperty="ScaleX" To="0" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="StackPanelScale" Storyboard.TargetProperty="ScaleY" To="0" Duration="0:0:0.6"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
+
+        <EventTrigger RoutedEvent="Button.Click" SourceName="signupBtn">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                Storyboard.TargetName="StackPanelScale"
+                Storyboard.TargetProperty="ScaleX"
+                To="0"
+                Duration="0:0:0.6"/>
+                    <DoubleAnimation
+                Storyboard.TargetName="StackPanelScale"
+                Storyboard.TargetProperty="ScaleY"
+                To="0"
+                Duration="0:0:0.6"/>
+
+                    <PointAnimation
+                Storyboard.TargetName="LoginStackPanel"
+                Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)"
+                To="0.5,0.5"
+                Duration="0:0:0"/>
+
+                    <DoubleAnimation
+                Storyboard.TargetName="LoginStackPanel"
+                Storyboard.TargetProperty="Opacity"
+                To="0"
+                Duration="0:0:0.6"/>
+
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                    </ObjectAnimationUsingKeyFrames>
+
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
+
+
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+
+        
+
+
+
+       
+
+        <EventTrigger RoutedEvent="Button.Click" SourceName="returnBtn">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                    </ObjectAnimationUsingKeyFrames>
+
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="1" To="0" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="1" To="0" Duration="0:0:0.6"/>
+
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                    </ObjectAnimationUsingKeyFrames>
+
+                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
+
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+
+        
+
+
+
+
+
+
+
+
+
 
     </Window.Triggers>
 
@@ -54,32 +137,17 @@
         </ImageBrush>
     </Window.Background>
 
-    
-    <materialDesign:Card UniformCornerRadius="25"  Background="{DynamicResource MaterialDesignPaper}" Margin="250,100,250,150" materialDesign:ShadowAssist.ShadowDepth="Depth5" Opacity="0.95" >
-        <materialDesign:Card.Style>
-            <Style TargetType="materialDesign:Card">
-                <Setter Property="RenderTransform">
-                    <Setter.Value>
-                        <TranslateTransform Y="150"/>
-                    </Setter.Value>
-                </Setter>
-                <Style.Triggers>
-                    <EventTrigger RoutedEvent="Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation 
-                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" 
-                                To="0" Duration="0:0:0.6"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Style.Triggers>
-            </Style>
-        </materialDesign:Card.Style>
+
+    <materialDesign:Card x:Name="CardForm" UniformCornerRadius="25"  Background="{DynamicResource MaterialDesignPaper}" Margin="250,100,250,150" materialDesign:ShadowAssist.ShadowDepth="Depth5" Opacity="0.95" >
+
+
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost" >
-            <StackPanel Background="#80FFFFFF" materialDesign:ShadowAssist.ShadowDepth="Depth5">
-                
-                
+
+
+            <StackPanel  Background="#80FFFFFF" materialDesign:ShadowAssist.ShadowDepth="Depth5">
+
+
+
 
                 <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
                     <StackPanel>
@@ -89,30 +157,61 @@
                             <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding IsDarkTheme}" Click="toggleTheme"/>
                         </StackPanel>
 
-                        
+
                         <Button x:Name="Btn_Exit" ToolTip="Close Application" Content="Выйти" Click="exitApp"/>
 
                     </StackPanel>
                 </materialDesign:PopupBox>
 
+                <StackPanel x:Name="LoginStackPanel" Opacity="1">
+                    
+                    <StackPanel.RenderTransform>
+                        <ScaleTransform x:Name="StackPanelScale" ScaleX="1" ScaleY="1" CenterX="0" CenterY="0"/>
+                    </StackPanel.RenderTransform>
+                    
+                    
+                    <Image Name="Userlogo" Margin="0,0,0,5" Source="E:\РПМ\УП\WPF_login\WPF_login\Assets\Images\userlogo.png" Height="50"></Image>
 
-                <Image Name="Userlogo" Margin="0,0,0,5" Source="E:\РПМ\УП\WPF_login\WPF_login\Assets\Images\userlogo.png" Height="50"></Image>
+                    <TextBlock Margin="0,25,0,5" HorizontalAlignment="Center" FontSize="28"  FontWeight="Bold" Text="Рад видеть!" />
+                    <TextBlock Margin="0,0,0,10" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Text="Welcome!" />
 
-                <TextBlock Margin="0,25,0,5" HorizontalAlignment="Center" FontSize="28"  FontWeight="Bold" Text="Рад видеть!" />
-                <TextBlock Margin="0,0,0,10" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Text="Welcome!" />
+                    <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Text="Авторизуйтесь или создайте аккаунт!"></TextBlock>
 
-                <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Text="Авторизуйтесь или создайте аккаунт!"></TextBlock>
+                    <TextBox Margin="0,20,0,0" Text="" x:Name="txtUsername" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Имя" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"  Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
-                <TextBox Margin="0,20,0,0" Text="" x:Name="txtUsername" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Имя" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"  Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+                    <PasswordBox Margin="0,20,0,0" x:Name="txtPassword" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Пароль" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
 
-                <PasswordBox Margin="0,20,0,0" x:Name="txtPassword" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Пароль" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                    <Button  Margin="0,20,0,0" x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Войти"></Button>
 
-                <Button  Margin="0,20,0,0" x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Войти"></Button>
-           
-                <Button Margin="0,5,0,0" x:Name="signupBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="25" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="12" Content="Создать аккаунт"></Button>
-                
+                    <Button Margin="0,5,0,0" x:Name="signupBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="25" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="12" Content="Создать аккаунт"></Button>
+
+                </StackPanel>
+
+                <StackPanel x:Name="RegistrationStackPanel" Opacity="0" >
+                    <StackPanel.RenderTransform>
+                        <ScaleTransform ScaleX="0" ScaleY="0" CenterX="0.5" CenterY="0.5"/>
+                    </StackPanel.RenderTransform>
+                    <StackPanel.RenderTransformOrigin>
+                        <Point X="0.5" Y="0.5"/>
+                    </StackPanel.RenderTransformOrigin>
+                    <Image Name="Userlogo2" Margin="0,0,0,5" Source="E:\РПМ\УП\WPF_login\WPF_login\Assets\Images\userlogo.png" Height="50"></Image>
+                    <TextBox Margin="0,20,0,0" Text="" x:Name="txtName" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Имя" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"  Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+                    <PasswordBox Margin="0,20,0,0" x:Name="txtPasswordReg" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Пароль" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                    <PasswordBox Margin="0,20,0,0" x:Name="txtConfirmPassword" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Повторите Пароль" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                    <Button Margin="0,20,0,0" x:Name="registerBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Зарегистрироваться"/>
+                    <Button Margin="0,5,0,0" x:Name="returnBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="25" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="12" Content="Вернуться"/>
+                </StackPanel>
+
+
+
 
             </StackPanel>
+
+
         </materialDesign:DialogHost>
+
+
+
     </materialDesign:Card>
+
 </Window>
