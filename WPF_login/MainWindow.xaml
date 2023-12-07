@@ -40,55 +40,59 @@
         <EventTrigger RoutedEvent="Button.Click" SourceName="signupBtn">
             <BeginStoryboard>
                 <Storyboard>
+
+                    <!-- Анимации для уменьшения LoginStackPanel -->
                     <DoubleAnimation
-                Storyboard.TargetName="StackPanelScale"
-                Storyboard.TargetProperty="ScaleX"
+                Storyboard.TargetName="LoginStackPanel"
+                Storyboard.TargetProperty="RenderTransform.ScaleX"
                 To="0"
                 Duration="0:0:0.6"/>
                     <DoubleAnimation
-                Storyboard.TargetName="StackPanelScale"
-                Storyboard.TargetProperty="ScaleY"
+                Storyboard.TargetName="LoginStackPanel"
+                Storyboard.TargetProperty="RenderTransform.ScaleY"
                 To="0"
                 Duration="0:0:0.6"/>
 
+                    <!-- Анимация для центрирования(чтобы уменьшалось по центру)  -->
                     <PointAnimation
                 Storyboard.TargetName="LoginStackPanel"
                 Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)"
                 To="0.5,0.5"
                 Duration="0:0:0"/>
 
+                    <!-- Анимация для изменения прозрачности LoginStackPanel -->
                     <DoubleAnimation
                 Storyboard.TargetName="LoginStackPanel"
                 Storyboard.TargetProperty="Opacity"
                 To="0"
                 Duration="0:0:0.6"/>
 
+                    <!-- Анимации для изменения  RegostrationStackPanel -->
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
-                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}" />
                     </ObjectAnimationUsingKeyFrames>
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
                         <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                     </ObjectAnimationUsingKeyFrames>
 
-                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
-                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
-                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
-
-
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.6" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="0" To="1" BeginTime="0:0:0.6" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="0" To="1" BeginTime="0:0:0.6" Duration="0:0:0.6"/>
 
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
 
-        
 
 
 
-       
+
 
         <EventTrigger RoutedEvent="Button.Click" SourceName="returnBtn">
             <BeginStoryboard>
                 <Storyboard>
+
+                    <!-- Анимации для изменения RegistrationStackPanel -->
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
                         <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
                     </ObjectAnimationUsingKeyFrames>
@@ -100,33 +104,21 @@
                     <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="1" To="0" Duration="0:0:0.6"/>
                     <DoubleAnimation Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="1" To="0" Duration="0:0:0.6"/>
 
+                    <!-- Анимации для изменения LoginStackPanel -->
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
-                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}" />
                     </ObjectAnimationUsingKeyFrames>
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RegistrationStackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
-                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}" />
                     </ObjectAnimationUsingKeyFrames>
 
-                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.6"/>
-                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
-                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="0" To="1" BeginTime="0:0:0.3" Duration="0:0:0.6"/>
-
+                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.6" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleX" From="0" To="1" BeginTime="0:0:0.6" Duration="0:0:0.6"/>
+                    <DoubleAnimation Storyboard.TargetName="LoginStackPanel" Storyboard.TargetProperty="RenderTransform.ScaleY" From="0" To="1" BeginTime="0:0:0.6" Duration="0:0:0.6"/>
 
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
-
-        
-
-
-
-
-
-
-
-
-
-
     </Window.Triggers>
 
     <Window.Background>
@@ -194,7 +186,7 @@
                     <StackPanel.RenderTransformOrigin>
                         <Point X="0.5" Y="0.5"/>
                     </StackPanel.RenderTransformOrigin>
-                    <Image Name="Userlogo2" Margin="0,0,0,5" Source="E:\РПМ\УП\WPF_login\WPF_login\Assets\Images\userlogo.png" Height="50"></Image>
+                    <Image Name="Userlogo2" Margin="0,0,0,5" Source="E:\РПМ\УП\WPF_login\WPF_login\Assets\Images\reglogo.png" Height="60"></Image>
                     <TextBox Margin="0,20,0,0" Text="" x:Name="txtName" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Имя" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"  Style="{StaticResource MaterialDesignOutlinedTextBox}" />
                     <PasswordBox Margin="0,20,0,0" x:Name="txtPasswordReg" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Введите Пароль" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                     <PasswordBox Margin="0,20,0,0" x:Name="txtConfirmPassword" Width="300" FontSize="18" Foreground="Purple" materialDesign:HintAssist.Hint="Повторите Пароль" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
